@@ -1,0 +1,51 @@
+Question
+Food delivery and review system schema design
+
+Solution: 
+When designing a schema for a food delivery and review system, there are several entities and relationships to consider. Here is a suggested schema design:
+
+1. User Entity:
+   - User ID (Primary Key)
+   - Name
+   - Email
+   - Password
+   - Phone number
+   - Address
+
+2. Restaurant Entity:
+   - Restaurant ID (Primary Key)
+   - Name
+   - Address
+   - Phone number
+   - Cuisine type
+
+3. Food Item Entity:
+   - Item ID (Primary Key)
+   - Restaurant ID (Foreign Key)
+   - Name
+   - Description
+   - Price
+
+4. Order Entity:
+   - Order ID (Primary Key)
+   - User ID (Foreign Key)
+   - Restaurant ID (Foreign Key)
+   - Order date
+   - Total amount
+
+5. Review Entity:
+   - Review ID (Primary Key)
+   - User ID (Foreign Key)
+   - Restaurant ID (Foreign Key)
+   - Order ID (Foreign Key)
+   - Rating (between 1 to 5)
+   - Comment
+
+With this schema, you can establish the following relationships:
+
+- A user can have multiple orders and reviews, and each order and review is associated with a specific user.
+- A restaurant can have multiple food items, orders, and reviews, and each food item, order, and review is associated with a specific restaurant.
+- An order can have multiple food items, and each food item can be part of multiple orders.
+- A review is associated with a specific order, allowing users to review the food and service they received.
+
+This schema can be extended further based on additional requirements such as delivery address, payment information, etc.
